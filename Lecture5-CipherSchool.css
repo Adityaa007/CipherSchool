@@ -1,0 +1,17 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+#para{
+    text-align: center;
+}
+.center:hover{
+    text-align: center;
+    background-color: greenyellow;
+}
+.img{
+    align-items: center;
+}
+h1,h2,.center,p,h3,img{
+    text-align: center;
+    color: darkblue;
+}
