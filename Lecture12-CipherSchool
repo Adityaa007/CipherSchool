@@ -1,1 +1,3 @@
+MongoDB
 
+MongoDB is a NoSQL database where each record is a document comprising of key-value pairs that are similar to JSon(JavaScript object Notation) objects. MongoDB is a flexible and allows its users to create schema, database tables, etc. Documents that are identifiable by a primary key make up the basic unit of MongoDB. Once MongoDB is installed, users can make use of Mongo shell as well. Mongo shell provides a Javascript interface through which the users can interact and carry out operations(e.g.: querying ,updating records,deleting records).
