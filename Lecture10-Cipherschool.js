@@ -4,8 +4,16 @@ let person={
 
     getFullName:function() {
         return `The name of the person is ${person.firstName} ${person.lastName}`
+<<<<<<< HEAD
+    };
+=======
     },
+>>>>>>> cc2151fe11ef916ce1718a4ed026c496a310a3e3
 phoneNumber:{
+<<<<<<< HEAD
+    mobile: 3434342;
+    landline: f
+=======
     mobile: "3434342",
     landline: "67567"
 },
@@ -20,6 +28,7 @@ function personm(firstName,lastName){
     this.firstName=firstName;
     this.lastName=lastName;
 
+>>>>>>> cc2151fe11ef916ce1718a4ed026c496a310a3e3
 }
 let person1=new personm("Shantanu","Shubham");
 let person2=new personm("Pam","beesley");
