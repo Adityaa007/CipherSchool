@@ -1,21 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
 import {Component} from "react";
-
+import TodoScreen from "./Screens/TodoScreen";
 class App extends Component{
   render(){
-    return(
-      <>
-        <div>
-          <h1>This is Dunder Mufflin!!</h1>
-        </div>
-        <div> 
-          <p>Dunder Mufflin, it is a paper Company</p>
-        </div>
-      </>
-    )
+      return <TodoScreen />;
+      
   }
-
 }
 
 export default App;
