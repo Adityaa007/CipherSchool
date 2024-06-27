@@ -2,10 +2,28 @@ import { Component } from "react";
 
 
 class TodoScreen extends Component{
+    state={
+        taskcount:0,
+
+    }
 
     render(){
         return(
+            <div className="screen">
             <h1 className="UI-heading center">ToDo List</h1>
+            <div>
+                <button onClick={
+                    (e) => {
+                        this.setState({...this.state,taskcount:this.state.taskcount+1})
+                        console.log("Add event button was clicked");
+                    }
+
+                } className="ui secondary button"> Add Task</button>
+                <p>No of Task Added till now:{this.state.taskcount}
+                </p>
+            </div>
+            </div>
+
         )
     }
 }

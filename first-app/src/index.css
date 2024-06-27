@@ -16,3 +16,7 @@ code {
 .center{
   text-align: center;
 }
+
+.screen {
+  padding: 6vh 12%
+}
