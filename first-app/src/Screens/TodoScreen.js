@@ -33,6 +33,11 @@ import AddTask from "../components/AddTask";
 
 const TodoScreen = () =>{
     const [taskList,setTasklist]=useState([]);
+
+    let addNewTask=(task)=>{
+        setTasklist([...taskList,{...task,cresatedDate:new Date()}])
+    }
+
     return(
         <div className="screen">
         <h1 className="Ui-heading center">ToDo List</h1>
