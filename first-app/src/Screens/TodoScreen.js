@@ -1,5 +1,6 @@
 import { useState} from "react";
 import Task from "../components/Task";
+import AddTask from "../components/AddTask";
 // import { Component } from "react";
 
 
@@ -52,6 +53,7 @@ const TodoScreen = () =>{
                 </div>
                 </section>
         </div>
+        <AddTask/>
         </div>
 
     );
