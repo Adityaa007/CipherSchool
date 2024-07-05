@@ -1,17 +1,18 @@
 import {useState} from "react";
-const AddTask=()=>{
+const AddTask=({onSubmit})=>{
 const [task,setTask]=useState({
   title:"",
   description:"",
 })
 let handleInputChange =(e)=>{
-  setTask({...task,[e.target.name]:e.target.value,})
+  setTask({ ...task ,[e.target.name]: e.target.value,})
   
 }
 
 let onFormSubmit =(e)=>{
   e.preventDefault();
   console.log(task);
+  onSubmit(task);
 }
 
     return (
@@ -22,16 +23,16 @@ let onFormSubmit =(e)=>{
     <div className="ui form">
   <div className="field">
     <label>Title</label>
-    <input type="text" placeholder="Task Title" name="title" onChange={handleInputChange}/>
+    <input type="text" placeholder="Task Title" name="title" onChange={handleInputChange} value={task.title}/>
   </div>
 </div>
-    <div classNamename="field">
+    <div className="field">
     <label>Description</label>
-    <textarea rows="2" placeholder="Task Description" name="description" onChange={handleInputChange}/>
+    <textarea rows="2" placeholder="Task Description" name="description" onChange={handleInputChange} value={task.description}/>
     </div>
     <section>
-    <button type="submit" class="ui secondary button"> Okay</button>
-<button class="ui button">Cancel</button>
+    <button type="submit" className="ui secondary button"> Okay</button>
+<button className="ui button">Cancel</button>
 </section>
     </form>
     </div>

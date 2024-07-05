@@ -35,7 +35,7 @@ const TodoScreen = () =>{
     const [taskList,setTasklist]=useState([]);
 
     let addNewTask=(task)=>{
-        setTasklist([...taskList,{...task,cresatedDate:new Date()}])
+        setTasklist([...taskList,{...task,createdDate:new Date()}])
     }
 
     return(
@@ -45,20 +45,21 @@ const TodoScreen = () =>{
             <button onClick= { (e)=>{
                 setTasklist([...taskList,{
                     title:"Go to Gym",
-                    Description:"To Being in the Shape"
+                    Description:"To Being in the Shape",
+                    createdDate: new Date(),
                 },
             ]);
             }
             } className="ui secondary button"> Add Task</button>
             <section className="section">
-            <div class="ui cards">
+            <div className="ui cards">
             {taskList.map((task,index)=>
                 <Task task={task} key={index}/>
                 )}
                 </div>
                 </section>
         </div>
-        <AddTask/>
+        <AddTask onSubmit={addNewTask}/>
         </div>
 
     );
