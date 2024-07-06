@@ -1,6 +1,8 @@
-import {useState} from "react";
-const AddTask=({onSubmit})=>{
-const [task,setTask]=useState({
+import {useContext, useState} from "react";
+import Taskcontext from "../context/Taskcontext";
+const AddTask=()=>{
+  const {addNewTask}= useContext(Taskcontext)
+const [task,setTask] = useState({
   title:"",
   description:"",
 })
@@ -12,7 +14,7 @@ let handleInputChange =(e)=>{
 let onFormSubmit =(e)=>{
   e.preventDefault();
   console.log(task);
-  onSubmit(task);
+  addNewTask(task);
 }
 
     return (

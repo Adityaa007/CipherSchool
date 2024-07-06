@@ -1,54 +1,24 @@
-import { useState} from "react";
+import { useContext} from "react";
 import Task from "../components/Task";
 import AddTask from "../components/AddTask";
-// import { Component } from "react";
-
-
-// class TodoScreen extends Component{
-//     state={
-//         taskcount:0,
-
-//     }
-
-//     render(){
-//         return(
-//             <div className="screen">
-//             <h1 className="UI-heading center">ToDo List</h1>
-//             <div>
-//                 <button onClick={
-//                     (e) => {
-//                         this.setState({...this.state,taskcount:this.state.taskcount+1})
-//                         console.log("Add event button was clicked");
-//                     }
-
-//                 } className="ui secondary button"> Add Task</button>
-//                 <p>No of Task Added till now:{this.state.taskcount}
-//                 </p>
-//             </div>
-//             </div>
-
-//         )
-//     }
-// }
+import Taskcontext from "../context/Taskcontext";
+import { useNavigate } from "react-router-dom";
 
 const TodoScreen = () =>{
-    const [taskList,setTasklist]=useState([]);
+    const { taskList}=useContext(Taskcontext);
+    const navigate=useNavigate();
 
-    let addNewTask=(task)=>{
-        setTasklist([...taskList,{...task,createdDate:new Date()}])
-    }
+ 
 
     return(
+        <>
         <div className="screen">
         <h1 className="Ui-heading center">ToDo List</h1>
         <div>
-            <button onClick= { (e)=>{
-                setTasklist([...taskList,{
-                    title:"Go to Gym",
-                    Description:"To Being in the Shape",
-                    createdDate: new Date(),
-                },
-            ]);
+            <button 
+                onClick= { (e)=>
+            {
+                navigate("/add-task")
             }
             } className="ui secondary button"> Add Task</button>
             <section className="section">
@@ -59,9 +29,9 @@ const TodoScreen = () =>{
                 </div>
                 </section>
         </div>
-        {/* <AddTask onSubmit={addNewTask}/> */}
+        {/* <AddTask onSubmit={AddNewTask}/> */}
         </div>
-
+        </>
     );
 }
 
