@@ -2,8 +2,8 @@ import { useContext, useState } from "react";
 import AddTask from "./components/AddTask";
 import TodoScreen from "./Screens/TodoScreen";
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
-import {TaskProvider} from "./context/Taskcontext";
-import Taskcontext from "./context/Taskcontext";
+import {TaskProvider} from "./context/TaskContext";
+import Taskcontext from "./context/TaskContext";
 
 
 
