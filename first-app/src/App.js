@@ -8,7 +8,7 @@ import Taskcontext from "./context/TaskContext";
  const router = createBrowserRouter([
     {
       path: "/",
-      element: <TodoScreen taskList={taskList}/>,
+      element: <TodoScreen/>,
     },
     {
       path:"/add-task",
