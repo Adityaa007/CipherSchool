@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { formatDate } from "../utils/Dateutil";
-const Task = ({task: {title, description, createdDate}}) => {
-    return (
+import TaskContext from "../context/TaskContext";
+const Task = ({task: {title, description, createdDate,taskId}}) => {
+
+const {deleteTask}=useContext(TaskContext);
+  return (
       
 
 
@@ -15,7 +19,7 @@ const Task = ({task: {title, description, createdDate}}) => {
     <div className="extra content">
       <div className="ui two buttons">
         <div className="ui basic green button">Edit</div>
-        <div className="ui basic red button">Delete</div>
+        <div className="ui basic red button" onClick={()=> deleteTask(taskId)}>Delete</div>
       </div>
     </div>
   </div>
