@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AddTask from "./components/AddTask";
 import TodoScreen from "./Screens/TodoScreen";
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
@@ -12,17 +12,19 @@ import Taskcontext from "./context/TaskContext";
     },
     {
       path:"/add-task",
-      element:<AddTask onSubmit={addNewTask}/>,
+      element:<AddTask/>,
     },
     ]);
 
 const App = ()=>{
   const {taskList,addNewTask}=useContext(Taskcontext);
 
+
  
   
   
   return (<TaskProvider><RouterProvider router={router}/> </TaskProvider>);
+
 };
 
 export default App;
