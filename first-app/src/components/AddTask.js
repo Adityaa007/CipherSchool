@@ -1,51 +1,59 @@
-import {useContext, useState} from "react";
+import {useContext, useState} from "react"
 import TaskContext from "../context/TaskContext";
 import { useNavigate } from "react-router-dom";
-const AddTask=()=>{
-  
-  const {addNewTask}= useContext(TaskContext)
-  const navigate=useNavigate();
-const [task,setTask] = useState({
-  title:"",
-  description:"",
-})
-let handleInputChange =(e)=>{
-  setTask({ ...task ,[e.target.name]: e.target.value,})
-  
-}
 
-let onFormSubmit =(e)=>{
-  e.preventDefault();
-  console.log(task);
-  addNewTask(task);
-  setTask({});
-  navigate("/")
-}
+const AddTask = ({onSubmit}) => {
 
-    return (
-        <>
-        <h3 className="ui heading center">Add New Task</h3>
-        <div className="ui form">
-    <form onSubmit={onFormSubmit}>
-    <div className="ui form">
-  <div className="field">
-    <label>Title</label>
-    <input type="text" placeholder="Task Title" name="title" onChange={handleInputChange} value={task.title}/>
-  </div>
-</div>
-    <div className="field">
-    <label>Description</label>
-    <textarea rows="2" placeholder="Task Description" name="description" onChange={handleInputChange} value={task.description}/>
-    </div>
-    <section>
-    <button type="submit" className="ui secondary button"> Okay</button>
-<button className="ui button">Cancel</button>
-</section>
-    </form>
-    </div>
-    </>
-    
+    const {addNewTask} = useContext(TaskContext)
+
+    const navigate= useNavigate();
+
+    const [task,setTask]=useState({
+        title:"",
+        description:"",
+    });
+
+    let handleInputChange = (e)=>{
+        // console.log(e.target.value);
+
+        setTask({
+            ...task,[e.target.name]: e.target.value
+        }
+
     )
-};
+    }
+
+    let onFormSubmit=(e)=>{
+        e.preventDefault();
+        console.log(task);
+        // onSubmit(task);
+        addNewTask(task)
+        setTask({});
+        navigate("/");
+    }
+    return (
+        <section className="screen">
+        <h3  className="ui heading center">Add New Task</h3>
+               <div className="ui form">
+            <form onSubmit={onFormSubmit}>
+                <div className="field">
+                    <label>Title</label>
+                    <input name="title" type="text" spellCheck={false} data-ms-editor={true} placeholder="Task Title" onChange={handleInputChange} value={task.title} />
+                </div>
+                <div className="field">
+                    <label>Description</label>
+                    <textarea name="description" rows="2" spellCheck={false} data-ms-editor={true} placeholder="Task Description" onChange={handleInputChange} value={task.description}/>
+                </div>
+                <button type="submit" className="ui primary button">
+                    Save
+                </button>
+            </form >
+        </div >
+        </section>
+    
+
+    );
+}
+//1. we are using value in input to establish 2 way binding in recat, so it will help to store the current data in task object when onChange event is triggered
 
 export default AddTask;
