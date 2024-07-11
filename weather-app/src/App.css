@@ -1,3 +1,6 @@
+@import url(https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css);
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.app{
+  padding: 18vh 20%;
+  height: 100vh;
+}
+
+.table-custom{
+  text-align:center;
+}
+
+.dark{
+  color: white;
+  background-color: black;
 }
