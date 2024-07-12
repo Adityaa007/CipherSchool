@@ -48,9 +48,14 @@
 
 .table-custom{
   text-align:center;
+  
 }
 
 .dark{
-  color: white;
+  color: white !important;
   background-color: black;
+}
+
+.my-heading{
+  margin-bottom: 5vh;
 }
