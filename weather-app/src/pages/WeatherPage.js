@@ -28,6 +28,34 @@ const WeatherPage=()=>{
           console.log(WeatherInfo);
         })
     },[])
+    const convertToStateVariable=(tempWeekWeather)=>{
+        let fetchedWeatherInfo=[];
+        for(let i=0;i<tempWeekWeather.daily.time.length;i++){
+            fetchedWeatherInfo.push({
+                date:new Date(tempWeekWeather.daily.time[i]),
+                maxTemperature: tempWeekWeather.daily.temperature_2m_max[i],
+                minTemperature: tempWeekWeather.daily.temperature_2m_min[i],
+                weatherCode:tempWeekWeather.daily.weatherCode[i],
+
+
+            })
+        }
+        setWeekWeather(fetchedWeatherInfo)
+
+        let currentWeather= tempWeekWeather.current_weather;
+        currentWeather.time=new Date(currentWeather.time);
+        currentWeather.isDay = currentWeather.is_day===1 ? true: false;
+        delete currentWeather.is_day;
+
+        currentWeather.weatherCode=currentWeather.weathercode;
+        delete currentWeather.weathercode;
+
+        setTodayWeather(currentWeather);
+    }
+    if(!weekWeather.length){
+        return <h3>Loading...</h3>
+    }
+    
 
     return (
         <div className={isday ? "app": "app dark"}>
