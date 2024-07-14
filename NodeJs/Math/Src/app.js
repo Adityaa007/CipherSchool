@@ -1,7 +1,10 @@
-const addNumbers=(...args)=>{
-    let sum=0;
-    args.forEach((arg)=>sum+=arg);
-    return sum;
-}
+const http=require("http");
 
-console.log( addNumbers(4,5,-3,2,6));
+const server = http.createServer((req,res)=>{
+    res.write("This is response from your first Node.js Server")
+    res.end();
+});
+
+server.listen(8080,()=>{
+    console.log("Server is Running");
+})
