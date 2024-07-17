@@ -1,5 +1,6 @@
-// import { Component } from "react";
 import { useState } from "react";
+// import { Component } from "react";
+
 import AddTask from "./components/AddTask";
 import ToDoScreen from "./Screens/TodoScreen";
 // for this i used the react router dom package from npm website 
